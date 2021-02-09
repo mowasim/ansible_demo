@@ -1,0 +1,985 @@
+1  which git
+    2  sudo apt update
+    3  sudo apt install
+    4  git
+    5  ls -la
+    6  cd .ssh
+    7  ls -la
+    8  ls
+    9  ssh-keygen -t ed25519 -c "firstkey"
+   10  ssh-keygen -t ed25519 -C "firstkey"
+   11  ls
+   12  ls -la
+   13  cat id_ed25519.pub
+   14  cat id_ed25519
+   15  ssh-copy-id -i ~/.ssh/id_ed25519.pub 168.62.51.142
+   16  ssh-copy-id -i ~/.ssh/id_ed25519.pub 10.0.0.5
+   17  cd ..
+   18  sudo passwd
+   19  cd .ssh
+   20  ssh-copy-id -i ~/.ssh/id_ed25519.pub 168.62.51.142
+   21  sudo passwd azureuser
+   22  ssh-copy-id -i ~/.ssh/id_ed25519.pub 168.62.51.142
+   23  cat id_ed25519.pub
+   24  ssh 168.62.51.142
+   25  ssh-keygen -t ed25519 -C "Ansible"
+   26  ls
+   27  cat ansible.pub
+   28  ssh -i ~/.ssh/Ansible 168.62.51.142
+   29  ls
+   30  cat id_ed25519.pub
+   31  git clone https://github.com/mowasim/ansible_demo.git
+   32  l
+   33  ls
+   34  cd ansible_demo/
+   35  ls
+   36  git config --global user.name "mowasim"
+   37  git config --global user.email "muhammad.wasim@hotmail.co.uk"
+   38  nano README.md
+   39  git .add
+   40  git add all
+   41  git add.
+   42  git status
+   43  git add README.MD
+   44  LS
+   45  ls
+   46  sudo git add .
+   47  sudo git commit -m "updated readme file"
+   48  git commit -m "updated readme file"
+   49  sudo git push
+   50  history
+azureuser@vm-server:~/.ssh/ansible_demo$ git commit -m "updated readme file"
+fatal: could not open '.git/COMMIT_EDITMSG': Permission denied
+azureuser@vm-server:~/.ssh/ansible_demo$ cd ..
+azureuser@vm-server:~/.ssh$ cd ..
+azureuser@vm-server:~$ sudo apt install ansible
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  linux-headers-4.15.0-135
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  ieee-data python-asn1crypto python-certifi python-cffi-backend python-chardet
+  python-cryptography python-enum34 python-httplib2 python-idna python-ipaddress
+  python-jinja2 python-jmespath python-kerberos python-libcloud python-lockfile
+  python-markupsafe python-netaddr python-openssl python-paramiko
+  python-pkg-resources python-pyasn1 python-requests python-selinux
+  python-simplejson python-urllib3 python-xmltodict python-yaml
+Suggested packages:
+  cowsay sshpass python-cryptography-doc python-cryptography-vectors
+  python-enum34-doc python-jinja2-doc python-lockfile-doc ipython
+  python-netaddr-docs python-openssl-doc python-openssl-dbg python-gssapi
+  python-setuptools python-socks python-ntlm
+Recommended packages:
+  python-winrm
+The following NEW packages will be installed:
+  ansible ieee-data python-asn1crypto python-certifi python-cffi-backend
+  python-chardet python-cryptography python-enum34 python-httplib2 python-idna
+  python-ipaddress python-jinja2 python-jmespath python-kerberos python-libcloud
+  python-lockfile python-markupsafe python-netaddr python-openssl python-paramiko
+  python-pkg-resources python-pyasn1 python-requests python-selinux
+  python-simplejson python-urllib3 python-xmltodict python-yaml
+0 upgraded, 28 newly installed, 0 to remove and 6 not upgraded.
+Need to get 7903 kB of archives.
+After this operation, 61.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-asn1crypto all                        0.24.0-1 [72.7 kB]
+Get:2 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-cffi-backend am                       d64 1.11.5-1 [63.4 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-enum34 all 1.1.                       6-2 [34.8 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-idna all 2.6-1                        [32.4 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-ipaddress all 1                       .0.17-1 [18.2 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-cryptog                       raphy amd64 2.1.4-1ubuntu1.4 [276 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-markupsafe amd6                       4 1.0-1build1 [13.0 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-jinja2                        all 2.10-1ubuntu0.18.04.1 [94.8 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-pyasn1 all 0.4.                       2-3 [46.7 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-parami                       ko all 2.0.0-1ubuntu1.2 [110 kB]
+Get:11 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-pkg-resources                        all 39.0.1-2 [128 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-yaml amd64 3.1                       2-1build2 [115 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-httpli                       b2 all 0.9.2+dfsg-1ubuntu0.2 [34.8 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ieee-data all 2018020                       4.1 [1539 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-netaddr all 0.                       7.19-1 [213 kB]
+Get:16 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 ansible a                       ll 2.5.1+dfsg-1ubuntu0.1 [3198 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-certifi all 20                       18.1.18-2 [144 kB]
+Get:18 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-chardet all 3.                       0.4-1 [80.3 kB]
+Get:19 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-jmespath all 0                       .9.3-1ubuntu1 [21.2 kB]
+Get:20 http://azure.archive.ubuntu.com/ubuntu bionic/universe amd64 python-kerberos a                       md64 1.1.14-1 [22.5 kB]
+Get:21 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-urllib                       3 all 1.22-1ubuntu0.18.04.2 [86.0 kB]
+Get:22 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-reques                       ts all 2.18.4-2ubuntu0.1 [58.5 kB]
+Get:23 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-lockfile all 1                       :0.12.2-2 [14.6 kB]
+Get:24 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-simplejson amd                       64 3.13.2-1 [61.2 kB]
+Get:25 http://azure.archive.ubuntu.com/ubuntu bionic/universe amd64 python-libcloud a                       ll 2.2.1-1 [1235 kB]
+Get:26 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 python-openssl all 17                       .5.0-1ubuntu1 [41.3 kB]
+Get:27 http://azure.archive.ubuntu.com/ubuntu bionic/universe amd64 python-selinux am                       d64 2.7-2build2 [138 kB]
+Get:28 http://azure.archive.ubuntu.com/ubuntu bionic/universe amd64 python-xmltodict                        all 0.11.0-1 [10.3 kB]
+Fetched 7903 kB in 0s (34.1 MB/s)
+Selecting previously unselected package python-asn1crypto.
+(Reading database ... 76706 files and directories currently installed.)
+Preparing to unpack .../00-python-asn1crypto_0.24.0-1_all.deb ...
+Unpacking python-asn1crypto (0.24.0-1) ...
+Selecting previously unselected package python-cffi-backend.
+Preparing to unpack .../01-python-cffi-backend_1.11.5-1_amd64.deb ...
+Unpacking python-cffi-backend (1.11.5-1) ...
+Selecting previously unselected package python-enum34.
+Preparing to unpack .../02-python-enum34_1.1.6-2_all.deb ...
+Unpacking python-enum34 (1.1.6-2) ...
+Selecting previously unselected package python-idna.
+Preparing to unpack .../03-python-idna_2.6-1_all.deb ...
+Unpacking python-idna (2.6-1) ...
+Selecting previously unselected package python-ipaddress.
+Preparing to unpack .../04-python-ipaddress_1.0.17-1_all.deb ...
+Unpacking python-ipaddress (1.0.17-1) ...
+Selecting previously unselected package python-cryptography.
+Preparing to unpack .../05-python-cryptography_2.1.4-1ubuntu1.4_amd64.deb ...
+Unpacking python-cryptography (2.1.4-1ubuntu1.4) ...
+Selecting previously unselected package python-markupsafe.
+Preparing to unpack .../06-python-markupsafe_1.0-1build1_amd64.deb ...
+Unpacking python-markupsafe (1.0-1build1) ...
+Selecting previously unselected package python-jinja2.
+Preparing to unpack .../07-python-jinja2_2.10-1ubuntu0.18.04.1_all.deb ...
+Unpacking python-jinja2 (2.10-1ubuntu0.18.04.1) ...
+Selecting previously unselected package python-pyasn1.
+Preparing to unpack .../08-python-pyasn1_0.4.2-3_all.deb ...
+Unpacking python-pyasn1 (0.4.2-3) ...
+Selecting previously unselected package python-paramiko.
+Preparing to unpack .../09-python-paramiko_2.0.0-1ubuntu1.2_all.deb ...
+Unpacking python-paramiko (2.0.0-1ubuntu1.2) ...
+Selecting previously unselected package python-pkg-resources.
+Preparing to unpack .../10-python-pkg-resources_39.0.1-2_all.deb ...
+Unpacking python-pkg-resources (39.0.1-2) ...
+Selecting previously unselected package python-yaml.
+Preparing to unpack .../11-python-yaml_3.12-1build2_amd64.deb ...
+Unpacking python-yaml (3.12-1build2) ...
+Selecting previously unselected package python-httplib2.
+Preparing to unpack .../12-python-httplib2_0.9.2+dfsg-1ubuntu0.2_all.deb ...
+Unpacking python-httplib2 (0.9.2+dfsg-1ubuntu0.2) ...
+Selecting previously unselected package ieee-data.
+Preparing to unpack .../13-ieee-data_20180204.1_all.deb ...
+Unpacking ieee-data (20180204.1) ...
+Selecting previously unselected package python-netaddr.
+Preparing to unpack .../14-python-netaddr_0.7.19-1_all.deb ...
+Unpacking python-netaddr (0.7.19-1) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../15-ansible_2.5.1+dfsg-1ubuntu0.1_all.deb ...
+Unpacking ansible (2.5.1+dfsg-1ubuntu0.1) ...
+Selecting previously unselected package python-certifi.
+Preparing to unpack .../16-python-certifi_2018.1.18-2_all.deb ...
+Unpacking python-certifi (2018.1.18-2) ...
+Selecting previously unselected package python-chardet.
+Preparing to unpack .../17-python-chardet_3.0.4-1_all.deb ...
+Unpacking python-chardet (3.0.4-1) ...
+Selecting previously unselected package python-jmespath.
+Preparing to unpack .../18-python-jmespath_0.9.3-1ubuntu1_all.deb ...
+Unpacking python-jmespath (0.9.3-1ubuntu1) ...
+Selecting previously unselected package python-kerberos.
+Preparing to unpack .../19-python-kerberos_1.1.14-1_amd64.deb ...
+Unpacking python-kerberos (1.1.14-1) ...
+Selecting previously unselected package python-urllib3.
+Preparing to unpack .../20-python-urllib3_1.22-1ubuntu0.18.04.2_all.deb ...
+Unpacking python-urllib3 (1.22-1ubuntu0.18.04.2) ...
+Selecting previously unselected package python-requests.
+Preparing to unpack .../21-python-requests_2.18.4-2ubuntu0.1_all.deb ...
+Unpacking python-requests (2.18.4-2ubuntu0.1) ...
+Selecting previously unselected package python-lockfile.
+Preparing to unpack .../22-python-lockfile_1%3a0.12.2-2_all.deb ...
+Unpacking python-lockfile (1:0.12.2-2) ...
+Selecting previously unselected package python-simplejson.
+Preparing to unpack .../23-python-simplejson_3.13.2-1_amd64.deb ...
+Unpacking python-simplejson (3.13.2-1) ...
+Selecting previously unselected package python-libcloud.
+Preparing to unpack .../24-python-libcloud_2.2.1-1_all.deb ...
+Unpacking python-libcloud (2.2.1-1) ...
+Selecting previously unselected package python-openssl.
+Preparing to unpack .../25-python-openssl_17.5.0-1ubuntu1_all.deb ...
+Unpacking python-openssl (17.5.0-1ubuntu1) ...
+Selecting previously unselected package python-selinux.
+Preparing to unpack .../26-python-selinux_2.7-2build2_amd64.deb ...
+Unpacking python-selinux (2.7-2build2) ...
+Selecting previously unselected package python-xmltodict.
+Preparing to unpack .../27-python-xmltodict_0.11.0-1_all.deb ...
+Unpacking python-xmltodict (0.11.0-1) ...
+Setting up python-idna (2.6-1) ...
+Setting up python-simplejson (3.13.2-1) ...
+Setting up python-urllib3 (1.22-1ubuntu0.18.04.2) ...
+Setting up python-yaml (3.12-1build2) ...
+Setting up python-asn1crypto (0.24.0-1) ...
+Setting up ieee-data (20180204.1) ...
+Setting up python-pyasn1 (0.4.2-3) ...
+Setting up python-netaddr (0.7.19-1) ...
+Setting up python-xmltodict (0.11.0-1) ...
+Setting up python-jmespath (0.9.3-1ubuntu1) ...
+Setting up python-certifi (2018.1.18-2) ...
+Setting up python-kerberos (1.1.14-1) ...
+Setting up python-pkg-resources (39.0.1-2) ...
+Setting up python-markupsafe (1.0-1build1) ...
+Setting up python-httplib2 (0.9.2+dfsg-1ubuntu0.2) ...
+Setting up python-cffi-backend (1.11.5-1) ...
+Setting up python-selinux (2.7-2build2) ...
+Setting up python-enum34 (1.1.6-2) ...
+Setting up python-lockfile (1:0.12.2-2) ...
+Setting up python-ipaddress (1.0.17-1) ...
+Setting up python-chardet (3.0.4-1) ...
+Setting up python-jinja2 (2.10-1ubuntu0.18.04.1) ...
+Setting up python-cryptography (2.1.4-1ubuntu1.4) ...
+Setting up python-requests (2.18.4-2ubuntu0.1) ...
+Setting up python-openssl (17.5.0-1ubuntu1) ...
+Setting up python-paramiko (2.0.0-1ubuntu1.2) ...
+Setting up ansible (2.5.1+dfsg-1ubuntu0.1) ...
+Setting up python-libcloud (2.2.1-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+
+azureuser@vm-server:~$ cd /.ssh
+-bash: cd: /.ssh: No such file or directory
+azureuser@vm-server:~$ cd .ssh
+azureuser@vm-server:~/.ssh$ ls
+ansible      ansible_demo     id_ed25519      known_hosts
+ansible.pub  authorized_keys  id_ed25519.pub
+azureuser@vm-server:~/.ssh$ cd ansible_demo/
+azureuser@vm-server:~/.ssh/ansible_demo$ ls
+README.md
+azureuser@vm-server:~/.ssh/ansible_demo$ nano inventory
+azureuser@vm-server:~/.ssh/ansible_demo$ nano inventory
+azureuser@vm-server:~/.ssh/ansible_demo$ git add .
+azureuser@vm-server:~/.ssh/ansible_demo$ git commit -m "added inventory"
+fatal: could not open '.git/COMMIT_EDITMSG': Permission denied
+azureuser@vm-server:~/.ssh/ansible_demo$ sudo git commit -m "added inventory"
+[main 1812a5e] added inventory
+ 1 file changed, 1 insertion(+)
+ create mode 100644 inventory
+azureuser@vm-server:~/.ssh/ansible_demo$ sudo git push master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+azureuser@vm-server:~/.ssh/ansible_demo$ sudo git push
+Username for 'https://github.com': muhammad.wasim@hotmail.co.uk
+Password for 'https://muhammad.wasim@hotmail.co.uk@github.com':
+Counting objects: 3, done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/mowasim/ansible_demo.git
+   41dcf55..1812a5e  main -> main
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all --key-file ~/.ssh/ansible -i inve                      ntory -m ping
+168.62.51.142 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all --key-file ~/.ssh/ansible -i inve                      ntory -m ping
+168.62.51.142 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ^C
+azureuser@vm-server:~/.ssh/ansible_demo$ nano ansible.cfg
+azureuser@vm-server:~/.ssh/ansible_demo$ nano ansible.cfg
+azureuser@vm-server:~/.ssh/ansible_demo$ ls /etc/ansible
+ansible.cfg  hosts
+azureuser@vm-server:~/.ssh/ansible_demo$ ls
+README.md  ansible.cfg  inventory
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m ping
+168.62.51.142 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all --list-hosts
+  hosts (1):
+    168.62.51.142
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m gather_facts
+168.62.51.142 | FAILED! => {
+    "msg": "The module gather_facts was not found in configured module paths. Addition                      ally, core modules are missing. If this is a checkout, run 'git pull --rebase' to corr                      ect this problem."
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m gather_facts
+168.62.51.142 | FAILED! => {
+    "msg": "The module gather_facts was not found in configured module paths. Addition                      ally, core modules are missing. If this is a checkout, run 'git pull --rebase' to corr                      ect this problem."
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m gather_facts
+168.62.51.142 | FAILED! => {
+    "msg": "The module gather_facts was not found in configured module paths. Addition                      ally, core modules are missing. If this is a checkout, run 'git pull --rebase' to corr                      ect this problem."
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ansible.cfg
+
+nothing added to commit but untracked files present (use "git add" to track)
+azureuser@vm-server:~/.ssh/ansible_demo$ git add ansible.cfg
+azureuser@vm-server:~/.ssh/ansible_demo$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   ansible.cfg
+
+azureuser@vm-server:~/.ssh/ansible_demo$ git commit -m "first ansible update"
+fatal: could not open '.git/COMMIT_EDITMSG': Permission denied
+azureuser@vm-server:~/.ssh/ansible_demo$ sudo git commit -m "first ansible update"
+[main 30484b0] first ansible update
+ 1 file changed, 3 insertions(+)
+ create mode 100644 ansible.cfg
+azureuser@vm-server:~/.ssh/ansible_demo$ sudo push
+sudo: push: command not found
+azureuser@vm-server:~/.ssh/ansible_demo$ sudo git push
+Username for 'https://github.com': muhammad.wasim@hotmail.co.uk
+Password for 'https://muhammad.wasim@hotmail.co.uk@github.com':
+Counting objects: 3, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 377 bytes | 377.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/mowasim/ansible_demo.git
+   1812a5e..30484b0  main -> main
+azureuser@vm-server:~/.ssh/ansible_demo$ cat ~/.ssh/ansible.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJPWzpXOM7JVdeUJpSVNvXIf3idfvQklBsMbqNay5025 Ansib                      le
+azureuser@vm-server:~/.ssh/ansible_demo$ ^C
+azureuser@vm-server:~/.ssh/ansible_demo$ ssh 20.185.219.87
+The authenticity of host '20.185.219.87 (20.185.219.87)' can't be established.
+ECDSA key fingerprint is SHA256:lazDH8w1d1IskJpBmHLJwFfTrl+hbA6yIZFw0CN/Snc.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added '20.185.219.87' (ECDSA) to the list of known hosts.
+azureuser@20.185.219.87: Permission denied (publickey).
+azureuser@vm-server:~/.ssh/ansible_demo$ cd ..
+azureuser@vm-server:~/.ssh$ ls
+ansible      ansible_demo     id_ed25519      known_hosts
+ansible.pub  authorized_keys  id_ed25519.pub
+azureuser@vm-server:~/.ssh$ cat known_hosts
+|1|A1qTv1/zZz9QxegMKVRRGbXbnjI=|X4NjsrsUh9Q6MqbBMIjtI3vdmKU= ecdsa-sha2-nistp256 AAAAE                      2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMOOD/7loouUXLCNIFlCNArYEwNoqLhRgqtIaa+                      jIEZsbCEtt2H45xciMdOtwkE5vc/9gjzKsodBflS3SSe8E10=
+|1|Wy5vxzUkOPlzyQGaT18kOEmuco0=|Ro6HXXSQuJM5qyfIsI4a26qVYL0= ecdsa-sha2-nistp256 AAAAE                      2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMOOD/7loouUXLCNIFlCNArYEwNoqLhRgqtIaa+                      jIEZsbCEtt2H45xciMdOtwkE5vc/9gjzKsodBflS3SSe8E10=
+|1|DLYbDF8KlaV5rLwEzmMAHihlcQo=|VAjGMN6Rz/wT5DHRYeUhaHW7jbY= ecdsa-sha2-nistp256 AAAAE                      2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBORj8rrCR3tFjiLymo3bLaU2iI7+BPrpAT1h2CA                      z8QZ/m8ZPg3eB0Hx6Q6Swkuifebk6suo7l54RdLEKY2jLpQs=
+azureuser@vm-server:~/.ssh$ cat ansible.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJPWzpXOM7JVdeUJpSVNvXIf3idfvQklBsMbqNay5025 Ansib                      le
+azureuser@vm-server:~/.ssh$ cat id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAySufMmRqlh0p7TRzcASZAcLWc26iamjUf0N2p1fkfa first                      key
+azureuser@vm-server:~/.ssh$ ^C
+azureuser@vm-server:~/.ssh$ ssh 20.185.219.87
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1039-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Feb  9 00:57:12 UTC 2021
+
+  System load:  0.01              Processes:           112
+  Usage of /:   4.5% of 28.90GB   Users logged in:     1
+  Memory usage: 44%               IP address for eth0: 10.0.0.6
+  Swap usage:   0%
+
+
+0 packages can be updated.
+0 of these updates are security updates.
+
+New release '20.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Feb  9 00:51:00 2021 from 176.248.86.235
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+azureuser@vm-slave2:~$ cd .ssh
+azureuser@vm-slave2:~/.ssh$ ls
+authorized_keys
+azureuser@vm-slave2:~/.ssh$ exit
+logout
+Connection to 20.185.219.87 closed.
+azureuser@vm-server:~/.ssh$ ls
+ansible      ansible_demo     id_ed25519      known_hosts
+ansible.pub  authorized_keys  id_ed25519.pub
+azureuser@vm-server:~/.ssh$ cd ansible_demo/
+azureuser@vm-server:~/.ssh/ansible_demo$ ls
+README.md  ansible.cfg  inventory
+azureuser@vm-server:~/.ssh/ansible_demo$ cat inventory
+168.62.51.142
+azureuser@vm-server:~/.ssh/ansible_demo$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+error: cannot update the ref 'refs/remotes/origin/main': unable to append to '.git/log                      s/refs/remotes/origin/main': Permission denied
+From https://github.com/mowasim/ansible_demo
+ ! 30484b0..c1de453  main       -> origin/main  (unable to update local ref)
+azureuser@vm-server:~/.ssh/ansible_demo$ ls
+README.md  ansible.cfg  inventory
+azureuser@vm-server:~/.ssh/ansible_demo$ cat inventory
+168.62.51.142
+azureuser@vm-server:~/.ssh/ansible_demo$ sudo git pull
+From https://github.com/mowasim/ansible_demo
+   30484b0..c1de453  main       -> origin/main
+Updating 30484b0..c1de453
+Fast-forward
+ inventory | 1 +
+ 1 file changed, 1 insertion(+)
+azureuser@vm-server:~/.ssh/ansible_demo$ cat inventory
+168.62.51.142
+20.185.219.87
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m ping
+168.62.51.142 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+20.185.219.87 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ cd ..
+azureuser@vm-server:~/.ssh$ cd ..
+azureuser@vm-server:~$ sudo apt install ansible
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+ansible is already the newest version (2.5.1+dfsg-1ubuntu0.1).
+The following package was automatically installed and is no longer required:
+  linux-headers-4.15.0-135
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+azureuser@vm-server:~$ cd .ssh
+azureuser@vm-server:~/.ssh$ ls
+ansible      ansible_demo     id_ed25519      known_hosts
+ansible.pub  authorized_keys  id_ed25519.pub
+azureuser@vm-server:~/.ssh$ cd ansible_demo/
+azureuser@vm-server:~/.ssh/ansible_demo$ ls
+README.md  ansible.cfg  inventory
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m apt
+168.62.51.142 | FAILED! => {
+    "changed": false,
+    "cmd": "apt-get update",
+    "msg": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission                       denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the fi                      le /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem unli                      nking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)",                      
+    "rc": 100,
+    "stderr": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permiss                      ion denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the                       file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem u                      nlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied                      )\n",
+    "stderr_lines": [
+        "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission de                      nied)",
+        "E: Unable to lock directory /var/lib/apt/lists/",
+        "W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13:                       Permission denied)",
+        "W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (                      13: Permission denied)"
+    ],
+    "stdout": "Reading package lists...\n",
+    "stdout_lines": [
+        "Reading package lists..."
+    ]
+}
+20.185.219.87 | FAILED! => {
+    "changed": false,
+    "cmd": "apt-get update",
+    "msg": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission                       denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the fi                      le /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem unli                      nking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)",                      
+    "rc": 100,
+    "stderr": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permiss                      ion denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the                       file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem u                      nlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied                      )\n",
+    "stderr_lines": [
+        "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission de                      nied)",
+        "E: Unable to lock directory /var/lib/apt/lists/",
+        "W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13:                       Permission denied)",
+        "W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (                      13: Permission denied)"
+    ],
+    "stdout": "Reading package lists...\n",
+    "stdout_lines": [
+        "Reading package lists..."
+    ]
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m apt -a update_cache=true
+20.185.219.87 | FAILED! => {
+    "changed": false,
+    "cmd": "apt-get update",
+    "msg": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission                       denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the fi                      le /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem unli                      nking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)",                      
+    "rc": 100,
+    "stderr": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permiss                      ion denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the                       file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem u                      nlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied                      )\n",
+    "stderr_lines": [
+        "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission de                      nied)",
+        "E: Unable to lock directory /var/lib/apt/lists/",
+        "W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13:                       Permission denied)",
+        "W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (                      13: Permission denied)"
+    ],
+    "stdout": "Reading package lists...\n",
+    "stdout_lines": [
+        "Reading package lists..."
+    ]
+}
+168.62.51.142 | FAILED! => {
+    "changed": false,
+    "cmd": "apt-get update",
+    "msg": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission                       denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the fi                      le /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem unli                      nking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)",                      
+    "rc": 100,
+    "stderr": "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permiss                      ion denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the                       file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)\nW: Problem u                      nlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied                      )\n",
+    "stderr_lines": [
+        "E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission de                      nied)",
+        "E: Unable to lock directory /var/lib/apt/lists/",
+        "W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13:                       Permission denied)",
+        "W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (                      13: Permission denied)"
+    ],
+    "stdout": "Reading package lists...\n",
+    "stdout_lines": [
+        "Reading package lists..."
+    ]
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m apt -a update_cache=true --bec                      ome --ask-become-pass
+SUDO password:
+168.62.51.142 | SUCCESS => {
+    "cache_update_time": 1612832884,
+    "cache_updated": true,
+    "changed": true
+}
+20.185.219.87 | SUCCESS => {
+    "cache_update_time": 1612832900,
+    "cache_updated": true,
+    "changed": true
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m apt -a name=vim-nox --become -                      -ask-become-pass
+SUDO password:
+168.62.51.142 | SUCCESS => {
+    "cache_update_time": 1612832884,
+    "cache_updated": false,
+    "changed": true,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state in                      formation...\nThe following package was automatically installed and is no longer requi                      red:\n  linux-headers-4.15.0-135\nUse 'sudo apt autoremove' to remove it.\nThe followi                      ng additional packages will be installed:\n  fonts-lato javascript-common libjs-jquery                       liblua5.2-0 libruby2.5 libtcl8.6\n  rake ruby ruby-did-you-mean ruby-minitest ruby-ne                      t-telnet ruby-power-assert\n  ruby-test-unit ruby2.5 rubygems-integration unzip zip\nS                      uggested packages:\n  apache2 | lighttpd | httpd tcl8.6 ri ruby-dev bundler cscope vim                      -doc\nThe following NEW packages will be installed:\n  fonts-lato javascript-common li                      bjs-jquery liblua5.2-0 libruby2.5 libtcl8.6\n  rake ruby ruby-did-you-mean ruby-minite                      st ruby-net-telnet ruby-power-assert\n  ruby-test-unit ruby2.5 rubygems-integration un                      zip vim-nox zip\n0 upgraded, 18 newly installed, 0 to remove and 6 not upgraded.\nNeed                       to get 8711 kB of archives.\nAfter this operation, 36.5 MB of additional disk space w                      ill be used.\nGet:1 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 fonts-lat                      o all 2.0-2 [2698 kB]\nGet:2 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64                       javascript-common all 11 [6066 B]\nGet:3 http://azure.archive.ubuntu.com/ubuntu bionic                      /main amd64 libjs-jquery all 3.2.1-1 [152 kB]\nGet:4 http://azure.archive.ubuntu.com/u                      buntu bionic/main amd64 liblua5.2-0 amd64 5.2.4-1.1build1 [108 kB]\nGet:5 http://azure                      .archive.ubuntu.com/ubuntu bionic/main amd64 rubygems-integration all 1.11 [4994 B]\nG                      et:6 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ruby2.5 amd64 2.                      5.1-1ubuntu1.7 [48.6 kB]\nGet:7 http://azure.archive.ubuntu.com/ubuntu bionic/main amd                      64 ruby amd64 1:2.5.1 [5712 B]\nGet:8 http://azure.archive.ubuntu.com/ubuntu bionic-up                      dates/main amd64 rake all 12.3.1-1ubuntu0.1 [44.9 kB]\nGet:9 http://azure.archive.ubun                      tu.com/ubuntu bionic/main amd64 ruby-did-you-mean all 1.2.0-2 [9700 B]\nGet:10 http://                      azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-minitest all 5.10.3-1 [38.6 kB]                      \nGet:11 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-net-telnet all                       0.1.1-2 [12.6 kB]\nGet:12 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 rub                      y-power-assert all 0.3.0-1 [7952 B]\nGet:13 http://azure.archive.ubuntu.com/ubuntu bio                      nic/main amd64 ruby-test-unit all 3.2.5-1 [61.1 kB]\nGet:14 http://azure.archive.ubunt                      u.com/ubuntu bionic-updates/main amd64 libruby2.5 amd64 2.5.1-1ubuntu1.7 [3068 kB]\nGe                      t:15 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libtcl8.6 amd64 8.6.8+df                      sg-3 [881 kB]\nGet:16 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64                       unzip amd64 6.0-21ubuntu1.1 [168 kB]\nGet:17 http://azure.archive.ubuntu.com/ubuntu b                      ionic/main amd64 zip amd64 3.0-11build1 [167 kB]\nGet:18 http://azure.archive.ubuntu.c                      om/ubuntu bionic-updates/universe amd64 vim-nox amd64 2:8.0.1453-1ubuntu1.4 [1228 kB]\                      nFetched 8711 kB in 0s (30.7 MB/s)\nSelecting previously unselected package fonts-lato                      .\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Rea                      ding database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading                       database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading datab                      ase ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database .                      .. 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75                      %\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(R                      eading database ... 95%\r(Reading database ... 100%\r(Reading database ... 76735 files                       and directories currently installed.)\r\nPreparing to unpack .../00-fonts-lato_2.0-2_                      all.deb ...\r\nUnpacking fonts-lato (2.0-2) ...\r\nSelecting previously unselected pac                      kage javascript-common.\r\nPreparing to unpack .../01-javascript-common_11_all.deb ...                      \r\nUnpacking javascript-common (11) ...\r\nSelecting previously unselected package li                      bjs-jquery.\r\nPreparing to unpack .../02-libjs-jquery_3.2.1-1_all.deb ...\r\nUnpackin                      g libjs-jquery (3.2.1-1) ...\r\nSelecting previously unselected package liblua5.2-0:am                      d64.\r\nPreparing to unpack .../03-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...\r\nUnpack                      ing liblua5.2-0:amd64 (5.2.4-1.1build1) ...\r\nSelecting previously unselected package                       rubygems-integration.\r\nPreparing to unpack .../04-rubygems-integration_1.11_all.deb                       ...\r\nUnpacking rubygems-integration (1.11) ...\r\nSelecting previously unselected p                      ackage ruby2.5.\r\nPreparing to unpack .../05-ruby2.5_2.5.1-1ubuntu1.7_amd64.deb ...\r                      \nUnpacking ruby2.5 (2.5.1-1ubuntu1.7) ...\r\nSelecting previously unselected package                       ruby.\r\nPreparing to unpack .../06-ruby_1%3a2.5.1_amd64.deb ...\r\nUnpacking ruby (1:                      2.5.1) ...\r\nSelecting previously unselected package rake.\r\nPreparing to unpack ...                      /07-rake_12.3.1-1ubuntu0.1_all.deb ...\r\nUnpacking rake (12.3.1-1ubuntu0.1) ...\r\nSe                      lecting previously unselected package ruby-did-you-mean.\r\nPreparing to unpack .../08                      -ruby-did-you-mean_1.2.0-2_all.deb ...\r\nUnpacking ruby-did-you-mean (1.2.0-2) ...\r\                      nSelecting previously unselected package ruby-minitest.\r\nPreparing to unpack .../09-                      ruby-minitest_5.10.3-1_all.deb ...\r\nUnpacking ruby-minitest (5.10.3-1) ...\r\nSelect                      ing previously unselected package ruby-net-telnet.\r\nPreparing to unpack .../10-ruby-                      net-telnet_0.1.1-2_all.deb ...\r\nUnpacking ruby-net-telnet (0.1.1-2) ...\r\nSelecting                       previously unselected package ruby-power-assert.\r\nPreparing to unpack .../11-ruby-p                      ower-assert_0.3.0-1_all.deb ...\r\nUnpacking ruby-power-assert (0.3.0-1) ...\r\nSelect                      ing previously unselected package ruby-test-unit.\r\nPreparing to unpack .../12-ruby-t                      est-unit_3.2.5-1_all.deb ...\r\nUnpacking ruby-test-unit (3.2.5-1) ...\r\nSelecting pr                      eviously unselected package libruby2.5:amd64.\r\nPreparing to unpack .../13-libruby2.5                      _2.5.1-1ubuntu1.7_amd64.deb ...\r\nUnpacking libruby2.5:amd64 (2.5.1-1ubuntu1.7) ...\r                      \nSelecting previously unselected package libtcl8.6:amd64.\r\nPreparing to unpack .../                      14-libtcl8.6_8.6.8+dfsg-3_amd64.deb ...\r\nUnpacking libtcl8.6:amd64 (8.6.8+dfsg-3) ..                      .\r\nSelecting previously unselected package unzip.\r\nPreparing to unpack .../15-unzi                      p_6.0-21ubuntu1.1_amd64.deb ...\r\nUnpacking unzip (6.0-21ubuntu1.1) ...\r\nSelecting                       previously unselected package zip.\r\nPreparing to unpack .../16-zip_3.0-11build1_amd6                      4.deb ...\r\nUnpacking zip (3.0-11build1) ...\r\nSelecting previously unselected packa                      ge vim-nox.\r\nPreparing to unpack .../17-vim-nox_2%3a8.0.1453-1ubuntu1.4_amd64.deb ..                      .\r\nUnpacking vim-nox (2:8.0.1453-1ubuntu1.4) ...\r\nSetting up libjs-jquery (3.2.1-1                      ) ...\r\nSetting up unzip (6.0-21ubuntu1.1) ...\r\nSetting up zip (3.0-11build1) ...\r                      \nSetting up fonts-lato (2.0-2) ...\r\nSetting up ruby-did-you-mean (1.2.0-2) ...\r\nS                      etting up ruby-net-telnet (0.1.1-2) ...\r\nSetting up rubygems-integration (1.11) ...\                      r\nSetting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...\r\nSetting up libtcl8.6:amd64 (8                      .6.8+dfsg-3) ...\r\nSetting up javascript-common (11) ...\r\nSetting up ruby-minitest                       (5.10.3-1) ...\r\nSetting up ruby-power-assert (0.3.0-1) ...\r\nSetting up ruby2.5 (2.                      5.1-1ubuntu1.7) ...\r\nSetting up ruby (1:2.5.1) ...\r\nSetting up ruby-test-unit (3.2                      .5-1) ...\r\nSetting up rake (12.3.1-1ubuntu0.1) ...\r\nSetting up libruby2.5:amd64 (2                      .5.1-1ubuntu1.7) ...\r\nSetting up vim-nox (2:8.0.1453-1ubuntu1.4) ...\r\nupdate-alter                      natives: using /usr/bin/vim.nox to provide /usr/bin/vim (vim) in auto mode\r\nupdate-a                      lternatives: using /usr/bin/vim.nox to provide /usr/bin/vimdiff (vimdiff) in auto mode                      \r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rvim (rvim) in aut                      o mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rview (rview                      ) in auto mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vi (                      vi) in auto mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vi                      ew (view) in auto mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/                      bin/ex (ex) in auto mode\r\nProcessing triggers for libc-bin (2.27-3ubuntu1.4) ...\r\n                      Processing triggers for man-db (2.8.3-2ubuntu0.1) ...\r\nProcessing triggers for mime-                      support (3.60ubuntu1) ...\r\n",
+    "stdout_lines": [
+        "Reading package lists...",
+        "Building dependency tree...",
+        "Reading state information...",
+        "The following package was automatically installed and is no longer required:"                      ,
+        "  linux-headers-4.15.0-135",
+        "Use 'sudo apt autoremove' to remove it.",
+        "The following additional packages will be installed:",
+        "  fonts-lato javascript-common libjs-jquery liblua5.2-0 libruby2.5 libtcl8.6"                      ,
+        "  rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert                      ",
+        "  ruby-test-unit ruby2.5 rubygems-integration unzip zip",
+        "Suggested packages:",
+        "  apache2 | lighttpd | httpd tcl8.6 ri ruby-dev bundler cscope vim-doc",
+        "The following NEW packages will be installed:",
+        "  fonts-lato javascript-common libjs-jquery liblua5.2-0 libruby2.5 libtcl8.6"                      ,
+        "  rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert                      ",
+        "  ruby-test-unit ruby2.5 rubygems-integration unzip vim-nox zip",
+        "0 upgraded, 18 newly installed, 0 to remove and 6 not upgraded.",
+        "Need to get 8711 kB of archives.",
+        "After this operation, 36.5 MB of additional disk space will be used.",
+        "Get:1 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 fonts-lato all                       2.0-2 [2698 kB]",
+        "Get:2 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 javascript-com                      mon all 11 [6066 B]",
+        "Get:3 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libjs-jquery a                      ll 3.2.1-1 [152 kB]",
+        "Get:4 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 liblua5.2-0 am                      d64 5.2.4-1.1build1 [108 kB]",
+        "Get:5 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 rubygems-integ                      ration all 1.11 [4994 B]",
+        "Get:6 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ruby2.                      5 amd64 2.5.1-1ubuntu1.7 [48.6 kB]",
+        "Get:7 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby amd64 1:2                      .5.1 [5712 B]",
+        "Get:8 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 rake a                      ll 12.3.1-1ubuntu0.1 [44.9 kB]",
+        "Get:9 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-did-you-m                      ean all 1.2.0-2 [9700 B]",
+        "Get:10 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-minitest                       all 5.10.3-1 [38.6 kB]",
+        "Get:11 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-net-teln                      et all 0.1.1-2 [12.6 kB]",
+        "Get:12 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-power-as                      sert all 0.3.0-1 [7952 B]",
+        "Get:13 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-test-uni                      t all 3.2.5-1 [61.1 kB]",
+        "Get:14 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libru                      by2.5 amd64 2.5.1-1ubuntu1.7 [3068 kB]",
+        "Get:15 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libtcl8.6 amd                      64 8.6.8+dfsg-3 [881 kB]",
+        "Get:16 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 unzip                       amd64 6.0-21ubuntu1.1 [168 kB]",
+        "Get:17 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 zip amd64 3.0                      -11build1 [167 kB]",
+        "Get:18 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 v                      im-nox amd64 2:8.0.1453-1ubuntu1.4 [1228 kB]",
+        "Fetched 8711 kB in 0s (30.7 MB/s)",
+        "Selecting previously unselected package fonts-lato.",
+        "(Reading database ... ",
+        "(Reading database ... 5%",
+        "(Reading database ... 10%",
+        "(Reading database ... 15%",
+        "(Reading database ... 20%",
+        "(Reading database ... 25%",
+        "(Reading database ... 30%",
+        "(Reading database ... 35%",
+        "(Reading database ... 40%",
+        "(Reading database ... 45%",
+        "(Reading database ... 50%",
+        "(Reading database ... 55%",
+        "(Reading database ... 60%",
+        "(Reading database ... 65%",
+        "(Reading database ... 70%",
+        "(Reading database ... 75%",
+        "(Reading database ... 80%",
+        "(Reading database ... 85%",
+        "(Reading database ... 90%",
+        "(Reading database ... 95%",
+        "(Reading database ... 100%",
+        "(Reading database ... 76735 files and directories currently installed.)",
+        "Preparing to unpack .../00-fonts-lato_2.0-2_all.deb ...",
+        "Unpacking fonts-lato (2.0-2) ...",
+        "Selecting previously unselected package javascript-common.",
+        "Preparing to unpack .../01-javascript-common_11_all.deb ...",
+        "Unpacking javascript-common (11) ...",
+        "Selecting previously unselected package libjs-jquery.",
+        "Preparing to unpack .../02-libjs-jquery_3.2.1-1_all.deb ...",
+        "Unpacking libjs-jquery (3.2.1-1) ...",
+        "Selecting previously unselected package liblua5.2-0:amd64.",
+        "Preparing to unpack .../03-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...",
+        "Unpacking liblua5.2-0:amd64 (5.2.4-1.1build1) ...",
+        "Selecting previously unselected package rubygems-integration.",
+        "Preparing to unpack .../04-rubygems-integration_1.11_all.deb ...",
+        "Unpacking rubygems-integration (1.11) ...",
+        "Selecting previously unselected package ruby2.5.",
+        "Preparing to unpack .../05-ruby2.5_2.5.1-1ubuntu1.7_amd64.deb ...",
+        "Unpacking ruby2.5 (2.5.1-1ubuntu1.7) ...",
+        "Selecting previously unselected package ruby.",
+        "Preparing to unpack .../06-ruby_1%3a2.5.1_amd64.deb ...",
+        "Unpacking ruby (1:2.5.1) ...",
+        "Selecting previously unselected package rake.",
+        "Preparing to unpack .../07-rake_12.3.1-1ubuntu0.1_all.deb ...",
+        "Unpacking rake (12.3.1-1ubuntu0.1) ...",
+        "Selecting previously unselected package ruby-did-you-mean.",
+        "Preparing to unpack .../08-ruby-did-you-mean_1.2.0-2_all.deb ...",
+        "Unpacking ruby-did-you-mean (1.2.0-2) ...",
+        "Selecting previously unselected package ruby-minitest.",
+        "Preparing to unpack .../09-ruby-minitest_5.10.3-1_all.deb ...",
+        "Unpacking ruby-minitest (5.10.3-1) ...",
+        "Selecting previously unselected package ruby-net-telnet.",
+        "Preparing to unpack .../10-ruby-net-telnet_0.1.1-2_all.deb ...",
+        "Unpacking ruby-net-telnet (0.1.1-2) ...",
+        "Selecting previously unselected package ruby-power-assert.",
+        "Preparing to unpack .../11-ruby-power-assert_0.3.0-1_all.deb ...",
+        "Unpacking ruby-power-assert (0.3.0-1) ...",
+        "Selecting previously unselected package ruby-test-unit.",
+        "Preparing to unpack .../12-ruby-test-unit_3.2.5-1_all.deb ...",
+        "Unpacking ruby-test-unit (3.2.5-1) ...",
+        "Selecting previously unselected package libruby2.5:amd64.",
+        "Preparing to unpack .../13-libruby2.5_2.5.1-1ubuntu1.7_amd64.deb ...",
+        "Unpacking libruby2.5:amd64 (2.5.1-1ubuntu1.7) ...",
+        "Selecting previously unselected package libtcl8.6:amd64.",
+        "Preparing to unpack .../14-libtcl8.6_8.6.8+dfsg-3_amd64.deb ...",
+        "Unpacking libtcl8.6:amd64 (8.6.8+dfsg-3) ...",
+        "Selecting previously unselected package unzip.",
+        "Preparing to unpack .../15-unzip_6.0-21ubuntu1.1_amd64.deb ...",
+        "Unpacking unzip (6.0-21ubuntu1.1) ...",
+        "Selecting previously unselected package zip.",
+        "Preparing to unpack .../16-zip_3.0-11build1_amd64.deb ...",
+        "Unpacking zip (3.0-11build1) ...",
+        "Selecting previously unselected package vim-nox.",
+        "Preparing to unpack .../17-vim-nox_2%3a8.0.1453-1ubuntu1.4_amd64.deb ...",
+        "Unpacking vim-nox (2:8.0.1453-1ubuntu1.4) ...",
+        "Setting up libjs-jquery (3.2.1-1) ...",
+        "Setting up unzip (6.0-21ubuntu1.1) ...",
+        "Setting up zip (3.0-11build1) ...",
+        "Setting up fonts-lato (2.0-2) ...",
+        "Setting up ruby-did-you-mean (1.2.0-2) ...",
+        "Setting up ruby-net-telnet (0.1.1-2) ...",
+        "Setting up rubygems-integration (1.11) ...",
+        "Setting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...",
+        "Setting up libtcl8.6:amd64 (8.6.8+dfsg-3) ...",
+        "Setting up javascript-common (11) ...",
+        "Setting up ruby-minitest (5.10.3-1) ...",
+        "Setting up ruby-power-assert (0.3.0-1) ...",
+        "Setting up ruby2.5 (2.5.1-1ubuntu1.7) ...",
+        "Setting up ruby (1:2.5.1) ...",
+        "Setting up ruby-test-unit (3.2.5-1) ...",
+        "Setting up rake (12.3.1-1ubuntu0.1) ...",
+        "Setting up libruby2.5:amd64 (2.5.1-1ubuntu1.7) ...",
+        "Setting up vim-nox (2:8.0.1453-1ubuntu1.4) ...",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vim (vim) in                       auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vimdiff (vimd                      iff) in auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rvim (rvim) i                      n auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rview (rview)                       in auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vi (vi) in au                      to mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/view (view) i                      n auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/ex (ex) in au                      to mode",
+        "Processing triggers for libc-bin (2.27-3ubuntu1.4) ...",
+        "Processing triggers for man-db (2.8.3-2ubuntu0.1) ...",
+        "Processing triggers for mime-support (3.60ubuntu1) ..."
+    ]
+}
+20.185.219.87 | SUCCESS => {
+    "cache_update_time": 1612832900,
+    "cache_updated": false,
+    "changed": true,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state in                      formation...\nThe following package was automatically installed and is no longer requi                      red:\n  linux-headers-4.15.0-135\nUse 'sudo apt autoremove' to remove it.\nThe followi                      ng additional packages will be installed:\n  fonts-lato javascript-common libjs-jquery                       liblua5.2-0 libruby2.5 libtcl8.6\n  rake ruby ruby-did-you-mean ruby-minitest ruby-ne                      t-telnet ruby-power-assert\n  ruby-test-unit ruby2.5 rubygems-integration unzip zip\nS                      uggested packages:\n  apache2 | lighttpd | httpd tcl8.6 ri ruby-dev bundler cscope vim                      -doc\nThe following NEW packages will be installed:\n  fonts-lato javascript-common li                      bjs-jquery liblua5.2-0 libruby2.5 libtcl8.6\n  rake ruby ruby-did-you-mean ruby-minite                      st ruby-net-telnet ruby-power-assert\n  ruby-test-unit ruby2.5 rubygems-integration un                      zip vim-nox zip\n0 upgraded, 18 newly installed, 0 to remove and 6 not upgraded.\nNeed                       to get 8711 kB of archives.\nAfter this operation, 36.5 MB of additional disk space w                      ill be used.\nGet:1 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 fonts-lat                      o all 2.0-2 [2698 kB]\nGet:2 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64                       javascript-common all 11 [6066 B]\nGet:3 http://azure.archive.ubuntu.com/ubuntu bionic                      /main amd64 libjs-jquery all 3.2.1-1 [152 kB]\nGet:4 http://azure.archive.ubuntu.com/u                      buntu bionic/main amd64 liblua5.2-0 amd64 5.2.4-1.1build1 [108 kB]\nGet:5 http://azure                      .archive.ubuntu.com/ubuntu bionic/main amd64 rubygems-integration all 1.11 [4994 B]\nG                      et:6 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ruby2.5 amd64 2.                      5.1-1ubuntu1.7 [48.6 kB]\nGet:7 http://azure.archive.ubuntu.com/ubuntu bionic/main amd                      64 ruby amd64 1:2.5.1 [5712 B]\nGet:8 http://azure.archive.ubuntu.com/ubuntu bionic-up                      dates/main amd64 rake all 12.3.1-1ubuntu0.1 [44.9 kB]\nGet:9 http://azure.archive.ubun                      tu.com/ubuntu bionic/main amd64 ruby-did-you-mean all 1.2.0-2 [9700 B]\nGet:10 http://                      azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-minitest all 5.10.3-1 [38.6 kB]                      \nGet:11 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-net-telnet all                       0.1.1-2 [12.6 kB]\nGet:12 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 rub                      y-power-assert all 0.3.0-1 [7952 B]\nGet:13 http://azure.archive.ubuntu.com/ubuntu bio                      nic/main amd64 ruby-test-unit all 3.2.5-1 [61.1 kB]\nGet:14 http://azure.archive.ubunt                      u.com/ubuntu bionic-updates/main amd64 libruby2.5 amd64 2.5.1-1ubuntu1.7 [3068 kB]\nGe                      t:15 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libtcl8.6 amd64 8.6.8+df                      sg-3 [881 kB]\nGet:16 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64                       unzip amd64 6.0-21ubuntu1.1 [168 kB]\nGet:17 http://azure.archive.ubuntu.com/ubuntu b                      ionic/main amd64 zip amd64 3.0-11build1 [167 kB]\nGet:18 http://azure.archive.ubuntu.c                      om/ubuntu bionic-updates/universe amd64 vim-nox amd64 2:8.0.1453-1ubuntu1.4 [1228 kB]\                      nFetched 8711 kB in 0s (33.5 MB/s)\nSelecting previously unselected package fonts-lato                      .\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Rea                      ding database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading                       database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading datab                      ase ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database .                      .. 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75                      %\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(R                      eading database ... 95%\r(Reading database ... 100%\r(Reading database ... 76735 files                       and directories currently installed.)\r\nPreparing to unpack .../00-fonts-lato_2.0-2_                      all.deb ...\r\nUnpacking fonts-lato (2.0-2) ...\r\nSelecting previously unselected pac                      kage javascript-common.\r\nPreparing to unpack .../01-javascript-common_11_all.deb ...                      \r\nUnpacking javascript-common (11) ...\r\nSelecting previously unselected package li                      bjs-jquery.\r\nPreparing to unpack .../02-libjs-jquery_3.2.1-1_all.deb ...\r\nUnpackin                      g libjs-jquery (3.2.1-1) ...\r\nSelecting previously unselected package liblua5.2-0:am                      d64.\r\nPreparing to unpack .../03-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...\r\nUnpack                      ing liblua5.2-0:amd64 (5.2.4-1.1build1) ...\r\nSelecting previously unselected package                       rubygems-integration.\r\nPreparing to unpack .../04-rubygems-integration_1.11_all.deb                       ...\r\nUnpacking rubygems-integration (1.11) ...\r\nSelecting previously unselected p                      ackage ruby2.5.\r\nPreparing to unpack .../05-ruby2.5_2.5.1-1ubuntu1.7_amd64.deb ...\r                      \nUnpacking ruby2.5 (2.5.1-1ubuntu1.7) ...\r\nSelecting previously unselected package                       ruby.\r\nPreparing to unpack .../06-ruby_1%3a2.5.1_amd64.deb ...\r\nUnpacking ruby (1:                      2.5.1) ...\r\nSelecting previously unselected package rake.\r\nPreparing to unpack ...                      /07-rake_12.3.1-1ubuntu0.1_all.deb ...\r\nUnpacking rake (12.3.1-1ubuntu0.1) ...\r\nSe                      lecting previously unselected package ruby-did-you-mean.\r\nPreparing to unpack .../08                      -ruby-did-you-mean_1.2.0-2_all.deb ...\r\nUnpacking ruby-did-you-mean (1.2.0-2) ...\r\                      nSelecting previously unselected package ruby-minitest.\r\nPreparing to unpack .../09-                      ruby-minitest_5.10.3-1_all.deb ...\r\nUnpacking ruby-minitest (5.10.3-1) ...\r\nSelect                      ing previously unselected package ruby-net-telnet.\r\nPreparing to unpack .../10-ruby-                      net-telnet_0.1.1-2_all.deb ...\r\nUnpacking ruby-net-telnet (0.1.1-2) ...\r\nSelecting                       previously unselected package ruby-power-assert.\r\nPreparing to unpack .../11-ruby-p                      ower-assert_0.3.0-1_all.deb ...\r\nUnpacking ruby-power-assert (0.3.0-1) ...\r\nSelect                      ing previously unselected package ruby-test-unit.\r\nPreparing to unpack .../12-ruby-t                      est-unit_3.2.5-1_all.deb ...\r\nUnpacking ruby-test-unit (3.2.5-1) ...\r\nSelecting pr                      eviously unselected package libruby2.5:amd64.\r\nPreparing to unpack .../13-libruby2.5                      _2.5.1-1ubuntu1.7_amd64.deb ...\r\nUnpacking libruby2.5:amd64 (2.5.1-1ubuntu1.7) ...\r                      \nSelecting previously unselected package libtcl8.6:amd64.\r\nPreparing to unpack .../                      14-libtcl8.6_8.6.8+dfsg-3_amd64.deb ...\r\nUnpacking libtcl8.6:amd64 (8.6.8+dfsg-3) ..                      .\r\nSelecting previously unselected package unzip.\r\nPreparing to unpack .../15-unzi                      p_6.0-21ubuntu1.1_amd64.deb ...\r\nUnpacking unzip (6.0-21ubuntu1.1) ...\r\nSelecting                       previously unselected package zip.\r\nPreparing to unpack .../16-zip_3.0-11build1_amd6                      4.deb ...\r\nUnpacking zip (3.0-11build1) ...\r\nSelecting previously unselected packa                      ge vim-nox.\r\nPreparing to unpack .../17-vim-nox_2%3a8.0.1453-1ubuntu1.4_amd64.deb ..                      .\r\nUnpacking vim-nox (2:8.0.1453-1ubuntu1.4) ...\r\nSetting up libjs-jquery (3.2.1-1                      ) ...\r\nSetting up unzip (6.0-21ubuntu1.1) ...\r\nSetting up zip (3.0-11build1) ...\r                      \nSetting up fonts-lato (2.0-2) ...\r\nSetting up ruby-did-you-mean (1.2.0-2) ...\r\nS                      etting up ruby-net-telnet (0.1.1-2) ...\r\nSetting up rubygems-integration (1.11) ...\                      r\nSetting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...\r\nSetting up libtcl8.6:amd64 (8                      .6.8+dfsg-3) ...\r\nSetting up javascript-common (11) ...\r\nSetting up ruby-minitest                       (5.10.3-1) ...\r\nSetting up ruby-power-assert (0.3.0-1) ...\r\nSetting up ruby2.5 (2.                      5.1-1ubuntu1.7) ...\r\nSetting up ruby (1:2.5.1) ...\r\nSetting up ruby-test-unit (3.2                      .5-1) ...\r\nSetting up rake (12.3.1-1ubuntu0.1) ...\r\nSetting up libruby2.5:amd64 (2                      .5.1-1ubuntu1.7) ...\r\nSetting up vim-nox (2:8.0.1453-1ubuntu1.4) ...\r\nupdate-alter                      natives: using /usr/bin/vim.nox to provide /usr/bin/vim (vim) in auto mode\r\nupdate-a                      lternatives: using /usr/bin/vim.nox to provide /usr/bin/vimdiff (vimdiff) in auto mode                      \r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rvim (rvim) in aut                      o mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rview (rview                      ) in auto mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vi (                      vi) in auto mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vi                      ew (view) in auto mode\r\nupdate-alternatives: using /usr/bin/vim.nox to provide /usr/                      bin/ex (ex) in auto mode\r\nProcessing triggers for libc-bin (2.27-3ubuntu1.4) ...\r\n                      Processing triggers for man-db (2.8.3-2ubuntu0.1) ...\r\nProcessing triggers for mime-                      support (3.60ubuntu1) ...\r\n",
+    "stdout_lines": [
+        "Reading package lists...",
+        "Building dependency tree...",
+        "Reading state information...",
+        "The following package was automatically installed and is no longer required:"                      ,
+        "  linux-headers-4.15.0-135",
+        "Use 'sudo apt autoremove' to remove it.",
+        "The following additional packages will be installed:",
+        "  fonts-lato javascript-common libjs-jquery liblua5.2-0 libruby2.5 libtcl8.6"                      ,
+        "  rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert                      ",
+        "  ruby-test-unit ruby2.5 rubygems-integration unzip zip",
+        "Suggested packages:",
+        "  apache2 | lighttpd | httpd tcl8.6 ri ruby-dev bundler cscope vim-doc",
+        "The following NEW packages will be installed:",
+        "  fonts-lato javascript-common libjs-jquery liblua5.2-0 libruby2.5 libtcl8.6"                      ,
+        "  rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert                      ",
+        "  ruby-test-unit ruby2.5 rubygems-integration unzip vim-nox zip",
+        "0 upgraded, 18 newly installed, 0 to remove and 6 not upgraded.",
+        "Need to get 8711 kB of archives.",
+        "After this operation, 36.5 MB of additional disk space will be used.",
+        "Get:1 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 fonts-lato all                       2.0-2 [2698 kB]",
+        "Get:2 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 javascript-com                      mon all 11 [6066 B]",
+        "Get:3 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libjs-jquery a                      ll 3.2.1-1 [152 kB]",
+        "Get:4 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 liblua5.2-0 am                      d64 5.2.4-1.1build1 [108 kB]",
+        "Get:5 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 rubygems-integ                      ration all 1.11 [4994 B]",
+        "Get:6 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ruby2.                      5 amd64 2.5.1-1ubuntu1.7 [48.6 kB]",
+        "Get:7 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby amd64 1:2                      .5.1 [5712 B]",
+        "Get:8 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 rake a                      ll 12.3.1-1ubuntu0.1 [44.9 kB]",
+        "Get:9 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-did-you-m                      ean all 1.2.0-2 [9700 B]",
+        "Get:10 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-minitest                       all 5.10.3-1 [38.6 kB]",
+        "Get:11 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-net-teln                      et all 0.1.1-2 [12.6 kB]",
+        "Get:12 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-power-as                      sert all 0.3.0-1 [7952 B]",
+        "Get:13 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ruby-test-uni                      t all 3.2.5-1 [61.1 kB]",
+        "Get:14 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libru                      by2.5 amd64 2.5.1-1ubuntu1.7 [3068 kB]",
+        "Get:15 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libtcl8.6 amd                      64 8.6.8+dfsg-3 [881 kB]",
+        "Get:16 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 unzip                       amd64 6.0-21ubuntu1.1 [168 kB]",
+        "Get:17 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 zip amd64 3.0                      -11build1 [167 kB]",
+        "Get:18 http://azure.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 v                      im-nox amd64 2:8.0.1453-1ubuntu1.4 [1228 kB]",
+        "Fetched 8711 kB in 0s (33.5 MB/s)",
+        "Selecting previously unselected package fonts-lato.",
+        "(Reading database ... ",
+        "(Reading database ... 5%",
+        "(Reading database ... 10%",
+        "(Reading database ... 15%",
+        "(Reading database ... 20%",
+        "(Reading database ... 25%",
+        "(Reading database ... 30%",
+        "(Reading database ... 35%",
+        "(Reading database ... 40%",
+        "(Reading database ... 45%",
+        "(Reading database ... 50%",
+        "(Reading database ... 55%",
+        "(Reading database ... 60%",
+        "(Reading database ... 65%",
+        "(Reading database ... 70%",
+        "(Reading database ... 75%",
+        "(Reading database ... 80%",
+        "(Reading database ... 85%",
+        "(Reading database ... 90%",
+        "(Reading database ... 95%",
+        "(Reading database ... 100%",
+        "(Reading database ... 76735 files and directories currently installed.)",
+        "Preparing to unpack .../00-fonts-lato_2.0-2_all.deb ...",
+        "Unpacking fonts-lato (2.0-2) ...",
+        "Selecting previously unselected package javascript-common.",
+        "Preparing to unpack .../01-javascript-common_11_all.deb ...",
+        "Unpacking javascript-common (11) ...",
+        "Selecting previously unselected package libjs-jquery.",
+        "Preparing to unpack .../02-libjs-jquery_3.2.1-1_all.deb ...",
+        "Unpacking libjs-jquery (3.2.1-1) ...",
+        "Selecting previously unselected package liblua5.2-0:amd64.",
+        "Preparing to unpack .../03-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...",
+        "Unpacking liblua5.2-0:amd64 (5.2.4-1.1build1) ...",
+        "Selecting previously unselected package rubygems-integration.",
+        "Preparing to unpack .../04-rubygems-integration_1.11_all.deb ...",
+        "Unpacking rubygems-integration (1.11) ...",
+        "Selecting previously unselected package ruby2.5.",
+        "Preparing to unpack .../05-ruby2.5_2.5.1-1ubuntu1.7_amd64.deb ...",
+        "Unpacking ruby2.5 (2.5.1-1ubuntu1.7) ...",
+        "Selecting previously unselected package ruby.",
+        "Preparing to unpack .../06-ruby_1%3a2.5.1_amd64.deb ...",
+        "Unpacking ruby (1:2.5.1) ...",
+        "Selecting previously unselected package rake.",
+        "Preparing to unpack .../07-rake_12.3.1-1ubuntu0.1_all.deb ...",
+        "Unpacking rake (12.3.1-1ubuntu0.1) ...",
+        "Selecting previously unselected package ruby-did-you-mean.",
+        "Preparing to unpack .../08-ruby-did-you-mean_1.2.0-2_all.deb ...",
+        "Unpacking ruby-did-you-mean (1.2.0-2) ...",
+        "Selecting previously unselected package ruby-minitest.",
+        "Preparing to unpack .../09-ruby-minitest_5.10.3-1_all.deb ...",
+        "Unpacking ruby-minitest (5.10.3-1) ...",
+        "Selecting previously unselected package ruby-net-telnet.",
+        "Preparing to unpack .../10-ruby-net-telnet_0.1.1-2_all.deb ...",
+        "Unpacking ruby-net-telnet (0.1.1-2) ...",
+        "Selecting previously unselected package ruby-power-assert.",
+        "Preparing to unpack .../11-ruby-power-assert_0.3.0-1_all.deb ...",
+        "Unpacking ruby-power-assert (0.3.0-1) ...",
+        "Selecting previously unselected package ruby-test-unit.",
+        "Preparing to unpack .../12-ruby-test-unit_3.2.5-1_all.deb ...",
+        "Unpacking ruby-test-unit (3.2.5-1) ...",
+        "Selecting previously unselected package libruby2.5:amd64.",
+        "Preparing to unpack .../13-libruby2.5_2.5.1-1ubuntu1.7_amd64.deb ...",
+        "Unpacking libruby2.5:amd64 (2.5.1-1ubuntu1.7) ...",
+        "Selecting previously unselected package libtcl8.6:amd64.",
+        "Preparing to unpack .../14-libtcl8.6_8.6.8+dfsg-3_amd64.deb ...",
+        "Unpacking libtcl8.6:amd64 (8.6.8+dfsg-3) ...",
+        "Selecting previously unselected package unzip.",
+        "Preparing to unpack .../15-unzip_6.0-21ubuntu1.1_amd64.deb ...",
+        "Unpacking unzip (6.0-21ubuntu1.1) ...",
+        "Selecting previously unselected package zip.",
+        "Preparing to unpack .../16-zip_3.0-11build1_amd64.deb ...",
+        "Unpacking zip (3.0-11build1) ...",
+        "Selecting previously unselected package vim-nox.",
+        "Preparing to unpack .../17-vim-nox_2%3a8.0.1453-1ubuntu1.4_amd64.deb ...",
+        "Unpacking vim-nox (2:8.0.1453-1ubuntu1.4) ...",
+        "Setting up libjs-jquery (3.2.1-1) ...",
+        "Setting up unzip (6.0-21ubuntu1.1) ...",
+        "Setting up zip (3.0-11build1) ...",
+        "Setting up fonts-lato (2.0-2) ...",
+        "Setting up ruby-did-you-mean (1.2.0-2) ...",
+        "Setting up ruby-net-telnet (0.1.1-2) ...",
+        "Setting up rubygems-integration (1.11) ...",
+        "Setting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...",
+        "Setting up libtcl8.6:amd64 (8.6.8+dfsg-3) ...",
+        "Setting up javascript-common (11) ...",
+        "Setting up ruby-minitest (5.10.3-1) ...",
+        "Setting up ruby-power-assert (0.3.0-1) ...",
+        "Setting up ruby2.5 (2.5.1-1ubuntu1.7) ...",
+        "Setting up ruby (1:2.5.1) ...",
+        "Setting up ruby-test-unit (3.2.5-1) ...",
+        "Setting up rake (12.3.1-1ubuntu0.1) ...",
+        "Setting up libruby2.5:amd64 (2.5.1-1ubuntu1.7) ...",
+        "Setting up vim-nox (2:8.0.1453-1ubuntu1.4) ...",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vim (vim) in                       auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vimdiff (vimd                      iff) in auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rvim (rvim) i                      n auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/rview (rview)                       in auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/vi (vi) in au                      to mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/view (view) i                      n auto mode",
+        "update-alternatives: using /usr/bin/vim.nox to provide /usr/bin/ex (ex) in au                      to mode",
+        "Processing triggers for libc-bin (2.27-3ubuntu1.4) ...",
+        "Processing triggers for man-db (2.8.3-2ubuntu0.1) ...",
+        "Processing triggers for mime-support (3.60ubuntu1) ..."
+    ]
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m apt -a name=snapd --become --a                      sk-become-pass
+SUDO password:
+168.62.51.142 | SUCCESS => {
+    "cache_update_time": 1612833470,
+    "cache_updated": false,
+    "changed": false
+}
+20.185.219.87 | SUCCESS => {
+    "cache_update_time": 1612832900,
+    "cache_updated": false,
+    "changed": false
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m apt -a "name=snapd state=lates                      t" --become --ask-become-pass
+SUDO password:
+168.62.51.142 | SUCCESS => {
+    "cache_update_time": 1612833470,
+    "cache_updated": false,
+    "changed": false
+}
+20.185.219.87 | SUCCESS => {
+    "cache_update_time": 1612832900,
+    "cache_updated": false,
+    "changed": false
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+SUDO password:
+20.185.219.87 | SUCCESS => {
+    "cache_update_time": 1612832900,
+    "cache_updated": false,
+    "changed": false
+}
+168.62.51.142 | SUCCESS => {
+    "cache_update_time": 1612833470,
+    "cache_updated": false,
+    "changed": false
+}
+azureuser@vm-server:~/.ssh/ansible_demo$ history
+    1  which git
+    2  sudo apt update
+    3  sudo apt install
+    4  git
+    5  ls -la
+    6  cd .ssh
+    7  ls -la
+    8  ls
+    9  ssh-keygen -t ed25519 -c "firstkey"
+   10  ssh-keygen -t ed25519 -C "firstkey"
+   11  ls
+   12  ls -la
+   13  cat id_ed25519.pub
+   14  cat id_ed25519
+   15  ssh-copy-id -i ~/.ssh/id_ed25519.pub 168.62.51.142
+   16  ssh-copy-id -i ~/.ssh/id_ed25519.pub 10.0.0.5
+   17  cd ..
+   18  sudo passwd
+   19  cd .ssh
+   20  ssh-copy-id -i ~/.ssh/id_ed25519.pub 168.62.51.142
+   21  sudo passwd azureuser
+   22  ssh-copy-id -i ~/.ssh/id_ed25519.pub 168.62.51.142
+   23  cat id_ed25519.pub
+   24  ssh 168.62.51.142
+   25  ssh-keygen -t ed25519 -C "Ansible"
+   26  ls
+   27  cat ansible.pub
+   28  ssh -i ~/.ssh/Ansible 168.62.51.142
+   29  ls
+   30  cat id_ed25519.pub
+   31  git clone https://github.com/mowasim/ansible_demo.git
+   32  l
+   33  ls
+   34  cd ansible_demo/
+   35  ls
+   36  git config --global user.name "mowasim"
+   37  git config --global user.email "muhammad.wasim@hotmail.co.uk"
+   38  nano README.md
+   39  git .add
+   40  git add all
+   41  git add.
+   42  git status
+   43  git add README.MD
+   44  LS
+   45  ls
+   46  sudo git add .
+   47  sudo git commit -m "updated readme file"
+   48  git commit -m "updated readme file"
+   49  sudo git push
+   50  history
+   51  git commit -m "updated readme file"
+   52  cd ..
+   53  sudo apt install ansible
+   54  cd /.ssh
+   55  cd .ssh
+   56  ls
+   57  cd ansible_demo/
+   58  ls
+   59  nano inventory
+   60  git add .
+   61  git commit -m "added inventory"
+   62  sudo git commit -m "added inventory"
+   63  sudo git push master
+   64  sudo git push
+   65  ansible all --key-file ~/.ssh/ansible -i inventory -m ping
+   66  nano ansible.cfg
+   67  ls /etc/ansible
+   68  ls
+   69  ansible all -m ping
+   70  ansible all --list-hosts
+   71  ansible all -m gather_facts
+   72  git status
+   73  git add ansible.cfg
+   74  git status
+   75  git commit -m "first ansible update"
+   76  sudo git commit -m "first ansible update"
+   77  sudo push
+   78  sudo git push
+   79  cat ~/.ssh/ansible.pub
+   80  ssh 20.185.219.87
+   81  cd ..
+   82  ls
+   83  cat known_hosts
+   84  cat ansible.pub
+   85  cat id_ed25519.pub
+   86  ssh 20.185.219.87
+   87  ls
+   88  cd ansible_demo/
+   89  ls
+   90  cat inventory
+   91  git pull
+   92  ls
+   93  cat inventory
+   94  sudo git pull
+   95  cat inventory
+   96  ansible all -m ping
+   97  cd ..
+   98  sudo apt install ansible
+   99  cd .ssh
+  100  ls
+  101  cd ansible_demo/
+  102  ls
+  103  ansible all -m apt
+  104  ansible all -m apt -a update_cache=true
+  105  ansible all -m apt -a update_cache=true --become --ask-become-pass
+  106  ansible all -m apt -a name=vim-nox --become --ask-become-pass
+  107  ansible all -m apt -a name=snapd --become --ask-become-pass
+  108  ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+  109  history
+azureuser@vm-server:~/.ssh/ansible_demo$
